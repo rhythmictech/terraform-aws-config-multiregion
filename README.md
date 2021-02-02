@@ -1,23 +1,27 @@
-# terraform-terraform-template
-Template repository for terraform modules. Good for any cloud and any provider.
+# terraform-aws-config-multiregion
+A wrapper module for [terraform-aws-config](https://github.com/rhythmictech/terraform-aws-config) to configure across an arbitrary set of regions.
 
-[![tflint](https://github.com/rhythmictech/terraform-terraform-template/workflows/tflint/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-terraform-template/actions?query=workflow%3Atflint+event%3Apush+branch%3Amaster)
-[![tfsec](https://github.com/rhythmictech/terraform-terraform-template/workflows/tfsec/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-terraform-template/actions?query=workflow%3Atfsec+event%3Apush+branch%3Amaster)
-[![yamllint](https://github.com/rhythmictech/terraform-terraform-template/workflows/yamllint/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-terraform-template/actions?query=workflow%3Ayamllint+event%3Apush+branch%3Amaster)
-[![misspell](https://github.com/rhythmictech/terraform-terraform-template/workflows/misspell/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-terraform-template/actions?query=workflow%3Amisspell+event%3Apush+branch%3Amaster)
-[![pre-commit-check](https://github.com/rhythmictech/terraform-terraform-template/workflows/pre-commit-check/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-terraform-template/actions?query=workflow%3Apre-commit-check+event%3Apush+branch%3Amaster)
+[![tflint](https://github.com/rhythmictech/terraform-aws-config-multiregion/workflows/tflint/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-aws-config-multiregion/actions?query=workflow%3Atflint+event%3Apush+branch%3Amaster)
+[![tfsec](https://github.com/rhythmictech/terraform-aws-config-multiregion/workflows/tfsec/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-aws-config-multiregion/actions?query=workflow%3Atfsec+event%3Apush+branch%3Amaster)
+[![yamllint](https://github.com/rhythmictech/terraform-aws-config-multiregion/workflows/yamllint/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-aws-config-multiregion/actions?query=workflow%3Ayamllint+event%3Apush+branch%3Amaster)
+[![misspell](https://github.com/rhythmictech/terraform-aws-config-multiregion/workflows/misspell/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-aws-config-multiregion/actions?query=workflow%3Amisspell+event%3Apush+branch%3Amaster)
+[![pre-commit-check](https://github.com/rhythmictech/terraform-aws-config-multiregion/workflows/pre-commit-check/badge.svg?branch=master&event=push)](https://github.com/rhythmictech/terraform-aws-config-multiregion/actions?query=workflow%3Apre-commit-check+event%3Apush+branch%3Amaster)
 <a href="https://twitter.com/intent/follow?screen_name=RhythmicTech"><img src="https://img.shields.io/twitter/follow/RhythmicTech?style=social&logo=twitter" alt="follow on Twitter"></a>
 
 ## Example
 Here's what using the module will look like
 ```hcl
 module "example" {
-  source = "rhythmictech/terraform-mycloud-mymodule
+  source = "rhythmictech/config/aws"
 }
 ```
 
 ## About
-A bit about this module
+There's no good way to do arbitrary multi-region things in TF, and some things need to be arbitrarily in multiple regions. For example, AWS Config should be enabled in any region you haven't administratively disabled.
+
+This module will simply wrap the `terraform-aws-config` module for the regions you specify in `enabled_regions`.
+
+*Note:* This module will forward all notifications via SNS->SQS to the SNS topic you specify. The SQS queue will be created in your default region, and the SNS topic must also be in that same region.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -25,23 +29,47 @@ A bit about this module
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13.5 |
+| aws | ~> 3.8 |
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| aws | ~> 3.8 |
+| aws.ap-northeast-1 | ~> 3.8 |
+| aws.ap-northeast-2 | ~> 3.8 |
+| aws.ap-south-1 | ~> 3.8 |
+| aws.ap-southeast-1 | ~> 3.8 |
+| aws.ap-southeast-2 | ~> 3.8 |
+| aws.ca-central-1 | ~> 3.8 |
+| aws.eu-central-1 | ~> 3.8 |
+| aws.eu-north-1 | ~> 3.8 |
+| aws.eu-west-1 | ~> 3.8 |
+| aws.eu-west-2 | ~> 3.8 |
+| aws.eu-west-3 | ~> 3.8 |
+| aws.sa-east-1 | ~> 3.8 |
+| aws.us-east-1 | ~> 3.8 |
+| aws.us-east-2 | ~> 3.8 |
+| aws.us-west-1 | ~> 3.8 |
+| aws.us-west-2 | ~> 3.8 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string` | n/a | yes |
-| tags | User-Defined tags | `map(string)` | `{}` | no |
+| bucket\_suffix | Suffix to append to S3 bucket name | `string` | `"awsconfig"` | no |
+| delivery\_channel\_name | Name of the delivery channel | `string` | `"awsconfig-s3"` | no |
+| enabled\_global\_logging\_regions | Regions to enable global logging in | `list(string)` | <pre>[<br>  "us-east-1"<br>]</pre> | no |
+| enabled\_regions | Regions to enable module in | `list(string)` | <pre>[<br>  "us-east-1",<br>  "us-east-2",<br>  "us-west-1",<br>  "us-west-2",<br>  "ca-central-1",<br>  "eu-central-1",<br>  "eu-west-1",<br>  "eu-west-2",<br>  "eu-west-3",<br>  "eu-north-1",<br>  "ap-northeast-1",<br>  "ap-northeast-2",<br>  "ap-southeast-1",<br>  "ap-southeast-2",<br>  "ap-south-1",<br>  "sa-east-1"<br>]</pre> | no |
+| logging\_bucket | Optional target for S3 access logging | `string` | `null` | no |
+| logging\_prefix | Optional target prefix for S3 access logging (only used if `s3_access_logging_bucket` is set) | `string` | `null` | no |
+| recorder\_name | Name of the config recorder | `string` | `"awsconfig"` | no |
+| snapshot\_delivery\_frequency | Deliery frequency: One\_Hour, Three\_Hours, Six\_Hours, Twelve\_Hours, TwentyFour\_Hours | `string` | `"Six_Hours"` | no |
+| tags | Tags to add to resources that support it | `map(string)` | `{}` | no |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| tags\_module | Tags Module in it's entirety |
+No output.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
