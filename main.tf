@@ -312,6 +312,32 @@ module "ap_northeast_2" {
 }
 
 provider "aws" {
+  alias  = "ap-northeast-3"
+  region = "ap-northeast-3"
+}
+
+module "ap_northeast_3" {
+  source  = "rhythmictech/config/aws"
+  version = "~> 1.0.0"
+
+  count = contains(var.enabled_regions, "ap-northeast-3") ? 1 : 0
+
+  bucket_suffix               = var.bucket_suffix
+  delivery_channel_name       = var.delivery_channel_name
+  enable_global_logging       = contains(var.enabled_global_logging_regions, "ap-northeast-3")
+  logging_bucket              = var.logging_bucket
+  logging_prefix              = var.logging_prefix
+  recorder_name               = var.recorder_name
+  snapshot_delivery_frequency = var.snapshot_delivery_frequency
+  sns_topic_arn               = try(aws_sns_topic.ap_northeast_3[0].arn, null)
+  tags                        = var.tags
+
+  providers = {
+    aws = aws.ap-northeast-3
+  }
+}
+
+provider "aws" {
   alias  = "ap-southeast-1"
   region = "ap-southeast-1"
 }

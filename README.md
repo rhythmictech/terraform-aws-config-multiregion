@@ -38,6 +38,7 @@ This module will simply wrap the `terraform-aws-config` module for the regions y
 | aws | ~> 3.8 |
 | aws.ap-northeast-1 | ~> 3.8 |
 | aws.ap-northeast-2 | ~> 3.8 |
+| aws.ap-northeast-3 | ~> 3.8 |
 | aws.ap-south-1 | ~> 3.8 |
 | aws.ap-southeast-1 | ~> 3.8 |
 | aws.ap-southeast-2 | ~> 3.8 |
@@ -60,7 +61,7 @@ This module will simply wrap the `terraform-aws-config` module for the regions y
 | bucket\_suffix | Suffix to append to S3 bucket name | `string` | `"awsconfig"` | no |
 | delivery\_channel\_name | Name of the delivery channel | `string` | `"awsconfig-s3"` | no |
 | enabled\_global\_logging\_regions | Regions to enable global logging in | `list(string)` | <pre>[<br>  "us-east-1"<br>]</pre> | no |
-| enabled\_regions | Regions to enable module in | `list(string)` | <pre>[<br>  "us-east-1",<br>  "us-east-2",<br>  "us-west-1",<br>  "us-west-2",<br>  "ca-central-1",<br>  "eu-central-1",<br>  "eu-west-1",<br>  "eu-west-2",<br>  "eu-west-3",<br>  "eu-north-1",<br>  "ap-northeast-1",<br>  "ap-northeast-2",<br>  "ap-southeast-1",<br>  "ap-southeast-2",<br>  "ap-south-1",<br>  "sa-east-1"<br>]</pre> | no |
+| enabled\_regions | Regions to enable module in | `list(string)` | <pre>[<br>  "us-east-1",<br>  "us-east-2",<br>  "us-west-1",<br>  "us-west-2",<br>  "ca-central-1",<br>  "eu-central-1",<br>  "eu-west-1",<br>  "eu-west-2",<br>  "eu-west-3",<br>  "eu-north-1",<br>  "ap-northeast-1",<br>  "ap-northeast-2",<br>  "ap-northeast-3",<br>  "ap-southeast-1",<br>  "ap-southeast-2",<br>  "ap-south-1",<br>  "sa-east-1"<br>]</pre> | no |
 | logging\_bucket | Optional target for S3 access logging | `string` | `null` | no |
 | logging\_prefix | Optional target prefix for S3 access logging (only used if `s3_access_logging_bucket` is set) | `string` | `null` | no |
 | recorder\_name | Name of the config recorder | `string` | `"awsconfig"` | no |
