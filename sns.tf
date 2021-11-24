@@ -238,6 +238,26 @@ resource "aws_sns_topic_subscription" "ap_northeast_2" {
   provider = aws.ap-northeast-2
 }
 
+resource "aws_sns_topic" "ap_northeast_3" {
+  count = contains(var.enabled_regions, "ap-northeast-3") ? 1 : 0
+
+  name_prefix       = "aws-config-notify-ap_northeast_3"
+  display_name      = "AWS Config AP-NORTHEAST-3"
+  kms_master_key_id = "alias/aws/sns"
+
+  provider = aws.ap-northeast-3
+}
+
+resource "aws_sns_topic_subscription" "ap_northeast_3" {
+  count = contains(var.enabled_regions, "ap-northeast-3") ? 1 : 0
+
+  topic_arn = aws_sns_topic.ap_northeast_3[0].arn
+  protocol  = "sqs"
+  endpoint  = aws_sqs_queue.this.arn
+
+  provider = aws.ap-northeast-3
+}
+
 resource "aws_sns_topic" "ap_southeast_1" {
   count = contains(var.enabled_regions, "ap-southeast-1") ? 1 : 0
 
