@@ -6,14 +6,14 @@ provider "aws" {
 module "us_east_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "us-east-1"
+  region  = "us-east-1"
 
   count = contains(var.enabled_regions, "us-east-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "us-east-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -33,14 +33,14 @@ provider "aws" {
 module "us_east_2" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "us-east-2"
+  region  = "us-east-2"
 
   count = contains(var.enabled_regions, "us-east-2") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "us-east-2")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -60,14 +60,14 @@ provider "aws" {
 module "us_west_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "us-west-1"
+  region  = "us-west-1"
 
   count = contains(var.enabled_regions, "us-west-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "us-west-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -87,14 +87,14 @@ provider "aws" {
 module "us_west_2" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "us-west-2"
+  region  = "us-west-2"
 
   count = contains(var.enabled_regions, "us-west-2") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "us-west-2")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -115,14 +115,14 @@ provider "aws" {
 module "ca_central_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "ca-central-1"
+  region  = "ca-central-1"
 
   count = contains(var.enabled_regions, "ca-central-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "ca-central-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -142,14 +142,14 @@ provider "aws" {
 module "eu_central_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "eu-central-1"
+  region  = "eu-central-1"
 
   count = contains(var.enabled_regions, "eu-central-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "eu-central-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -169,14 +169,14 @@ provider "aws" {
 module "eu_west_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "eu-west-1"
+  region  = "eu-west-1"
 
   count = contains(var.enabled_regions, "eu-west-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "eu-west-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -196,14 +196,14 @@ provider "aws" {
 module "eu_west_2" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "eu-west-2"
+  region  = "eu-west-2"
 
   count = contains(var.enabled_regions, "eu-west-2") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "eu-west-2")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -223,14 +223,14 @@ provider "aws" {
 module "eu_west_3" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "eu-west-3"
+  region  = "eu-west-3"
 
   count = contains(var.enabled_regions, "eu-west-3") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "eu-west-3")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -250,14 +250,14 @@ provider "aws" {
 module "eu_north_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "eu-north-1"
+  region  = "eu-north-1"
 
   count = contains(var.enabled_regions, "eu-north-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "eu-north-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -277,14 +277,14 @@ provider "aws" {
 module "ap_northeast_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "ap-southeast-1"
+  region  = "ap-southeast-1"
 
   count = contains(var.enabled_regions, "ap-northeast-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "ap-northeast-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -304,14 +304,14 @@ provider "aws" {
 module "ap_northeast_2" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "ap-northeast-2"
+  region  = "ap-northeast-2"
 
   count = contains(var.enabled_regions, "ap-northeast-2") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "ap-northeast-2")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -331,14 +331,14 @@ provider "aws" {
 module "ap_northeast_3" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "ap-northeast-3"
+  region  = "ap-northeast-3"
 
   count = contains(var.enabled_regions, "ap-northeast-3") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "ap-northeast-3")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -358,14 +358,14 @@ provider "aws" {
 module "ap_southeast_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "ap-southeast-1"
+  region  = "ap-southeast-1"
 
   count = contains(var.enabled_regions, "ap-southeast-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "ap-southeast-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -385,14 +385,14 @@ provider "aws" {
 module "ap_southeast_2" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "ap-southeast-2"
+  region  = "ap-southeast-2"
 
   count = contains(var.enabled_regions, "ap-southeast-2") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "ap-southeast-2")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -412,14 +412,14 @@ provider "aws" {
 module "ap_south_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "ap-south-1"
+  region  = "ap-south-1"
 
   count = contains(var.enabled_regions, "ap-south-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "ap-south-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
@@ -439,14 +439,14 @@ provider "aws" {
 module "sa_east_1" {
   source  = "rhythmictech/config/aws"
   version = "~> 1.0.1"
-  region = "sa-east-1"
+  region  = "sa-east-1"
 
   count = contains(var.enabled_regions, "sa-east-1") ? 1 : 0
 
   # bucket_suffix               = var.bucket_suffix
-  delivery_channel_name       = var.delivery_channel_name
+  delivery_channel_name = var.delivery_channel_name
   # enable_global_logging       = contains(var.enabled_global_logging_regions, "sa-east-1")
-  logging_bucket              = var.logging_bucket
+  logging_bucket = var.logging_bucket
   # logging_prefix              = var.logging_prefix
   recorder_name               = var.recorder_name
   snapshot_delivery_frequency = var.snapshot_delivery_frequency
