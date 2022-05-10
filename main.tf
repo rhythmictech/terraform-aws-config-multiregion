@@ -5,7 +5,7 @@ provider "aws" {
 
 module "us_east_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "us-east-1") ? 1 : 0
 
@@ -31,7 +31,7 @@ provider "aws" {
 
 module "us_east_2" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "us-east-2") ? 1 : 0
 
@@ -57,7 +57,7 @@ provider "aws" {
 
 module "us_west_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "us-west-1") ? 1 : 0
 
@@ -83,7 +83,7 @@ provider "aws" {
 
 module "us_west_2" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "us-west-2") ? 1 : 0
 
@@ -110,7 +110,7 @@ provider "aws" {
 
 module "ca_central_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "ca-central-1") ? 1 : 0
 
@@ -136,7 +136,7 @@ provider "aws" {
 
 module "eu_central_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "eu-central-1") ? 1 : 0
 
@@ -162,7 +162,7 @@ provider "aws" {
 
 module "eu_west_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "eu-west-1") ? 1 : 0
 
@@ -188,7 +188,7 @@ provider "aws" {
 
 module "eu_west_2" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "eu-west-2") ? 1 : 0
 
@@ -214,7 +214,7 @@ provider "aws" {
 
 module "eu_west_3" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "eu-west-3") ? 1 : 0
 
@@ -240,7 +240,7 @@ provider "aws" {
 
 module "eu_north_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "eu-north-1") ? 1 : 0
 
@@ -266,7 +266,7 @@ provider "aws" {
 
 module "ap_northeast_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "ap-northeast-1") ? 1 : 0
 
@@ -292,7 +292,7 @@ provider "aws" {
 
 module "ap_northeast_2" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "ap-northeast-2") ? 1 : 0
 
@@ -318,7 +318,7 @@ provider "aws" {
 
 module "ap_northeast_3" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "ap-northeast-3") ? 1 : 0
 
@@ -344,7 +344,7 @@ provider "aws" {
 
 module "ap_southeast_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "ap-southeast-1") ? 1 : 0
 
@@ -370,7 +370,7 @@ provider "aws" {
 
 module "ap_southeast_2" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "ap-southeast-2") ? 1 : 0
 
@@ -396,7 +396,7 @@ provider "aws" {
 
 module "ap_south_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "ap-south-1") ? 1 : 0
 
@@ -422,7 +422,7 @@ provider "aws" {
 
 module "sa_east_1" {
   source  = "rhythmictech/config/aws"
-  version = "~> 1.1.2"
+  version = "~> 1.1.3-rc1"
 
   count = contains(var.enabled_regions, "sa-east-1") ? 1 : 0
 
